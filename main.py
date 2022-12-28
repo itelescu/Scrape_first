@@ -61,9 +61,8 @@ class SelectCar:
 
 obj = SelectCar()
 try:
-    
-    with open(r'C:\Users\itelescu\Documents\Scrapy_test\crawling_project\crawling_project\spiders\parser_link.txt', 'w')\
+    with open(r'C:\Users\itelescu\Documents\Scrapy_test\crawling_project\crawling_project\spiders\parser_link.txt', 'w') \
             as file:
         f_link = file.write(obj.select_body())
-except Exception as exep:
+except IOError as exep:
     print('Error occured: ', strerror(exep.errno))
