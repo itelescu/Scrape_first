@@ -9,8 +9,8 @@ import scrapy
 try:
     with open('parser_link.txt') as file:
         link = file.read()
-except Exception as exep:
-    print('Ocurred error: ', strerror(exep.errno))
+except IOError as exep:
+    print('Occurred error: ', strerror(exep.errno))
         
 # Number of pages you want to scrap
 number_of_pages = 1
