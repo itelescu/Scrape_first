@@ -1,14 +1,17 @@
 from urllib.parse import urlencode
+from os import strerror
 import scrapy
 
 '''Starting the spider will be done following next steps:
     1.Change directory where spider is located
     2.Access following command 'scrapy crawl autovit_scrap' '''
 
-
-with open('parser_link.txt') as file:
-    link = file.read()
-
+try:
+    with open('parser_link.txt') as file:
+        link = file.read()
+except Exception as exep:
+    print('Ocurred error: ', strerror(exep.errno))
+        
 # Number of pages you want to scrap
 number_of_pages = 1
 
