@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from time import sleep
 from dotenv import load_dotenv
+from os import streror
 import os
 import sys
 
@@ -59,7 +60,10 @@ class SelectCar:
 
 
 obj = SelectCar()
-
-with open(r'C:\Users\itelescu\Documents\Scrapy_test\crawling_project\crawling_project\spiders\parser_link.txt', 'w')\
-        as file:
-    f_link = file.write(obj.select_body())
+try:
+    
+    with open(r'C:\Users\itelescu\Documents\Scrapy_test\crawling_project\crawling_project\spiders\parser_link.txt', 'w')\
+            as file:
+        f_link = file.write(obj.select_body())
+except Exception as exep:
+    print('Error occured: ', strerror(exep.errno))
